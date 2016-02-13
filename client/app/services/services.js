@@ -21,11 +21,20 @@ angular.module('shortly.services', [])
     .then(function(res) {
       return res.data;
     })
-  }
+  };
+  
+  var navToLink = function (code) {
+    return $http({
+      method: 'GET',
+      url: '/api/links',
+      code: code
+    })
+  };
   
   return {
     getLinks: getLinks,
-    addLink: addLink  
+    addLink: addLink,
+    navToLink: navToLink  
   };
 })
 .factory('Auth', function ($http, $location, $window) {

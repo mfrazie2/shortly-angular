@@ -1,6 +1,14 @@
 <div id='container'>
   <!-- Your html here -->
-  <ul>
-    <li ng-repeat="link in data.links">{{ link.code }}</li>
-  </ul>
+  <table>
+    <tr>
+      <th><h3>Website</h3></th>
+      <th><h3>Shortened URL</h3></th>
+      <th><h3>Visits</h3></th>
+    </tr>
+    <tr ng-repeat="link in data.links">
+      <td> {{ link.title }} </td>
+      <td ng-click="navToLink(  link.code )"> <a href="{{ link.url }}" >{{ link.base_url + '/#/links/' + link.code}}</a> </td>
+      <td> <h3>{{ link.visits }}</h3></td>
+    </tr>
 </div>
