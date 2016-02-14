@@ -5,15 +5,13 @@ angular.module('shortly.links', [])
   $scope.data = {};
   
   $scope.getLinks = function () {
-    Links.getLinks()
-      .then(function(links) {
-        $scope.data.links = links;
-      });
+
+      Links.getLinks()
+        .then(function(links) {
+          $scope.data.links = links;
+        });
+    
   };
-  
-  $scope.navToLink = function(code) {
-    Link.navToLink(code)
-  }
   
   $scope.getLinks();
 });

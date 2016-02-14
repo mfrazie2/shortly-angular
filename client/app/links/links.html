@@ -1,14 +1,19 @@
 <div id='container'>
   <!-- Your html here -->
+  <a href='/#/links'>All Links</a>
+  <a href='/#/shorten'>Shorten</a>
+  <div>
+    Search: <input ng-model='query' placeholder='filter'>
+  </div>
   <table>
     <tr>
       <th><h3>Website</h3></th>
       <th><h3>Shortened URL</h3></th>
       <th><h3>Visits</h3></th>
     </tr>
-    <tr ng-repeat="link in data.links">
+    <tr ng-repeat="link in data.links | filter:query | orderBy:'-visits'">
       <td> {{ link.title }} </td>
-      <td ng-click="navToLink(  link.code )"> <a href="{{ link.url }}" >{{ link.base_url + '/#/links/' + link.code}}</a> </td>
+      <td> <a ng-href='{{link.base_url + "/api/links/" + link.code }}'>  {{ link.base_url + '/api/links/' + link.code}} </a> </td>
       <td> <h3>{{ link.visits }}</h3></td>
     </tr>
 </div>

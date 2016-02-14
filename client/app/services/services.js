@@ -23,18 +23,9 @@ angular.module('shortly.services', [])
     })
   };
   
-  var navToLink = function (code) {
-    return $http({
-      method: 'GET',
-      url: '/api/links',
-      code: code
-    })
-  };
-  
   return {
     getLinks: getLinks,
-    addLink: addLink,
-    navToLink: navToLink  
+    addLink: addLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
