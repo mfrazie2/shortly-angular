@@ -146,3 +146,6 @@ input[type=url]:focus {
   clear: both;
 }
 
+.ng-valid-url input {
+  border: solid 2px red;
+}
