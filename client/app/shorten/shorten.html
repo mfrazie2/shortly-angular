@@ -1,12 +1,8 @@
 <div id='container'>
-<a href='/#/links'>All Links</a>
-<a href='/#/shorten'>Shorten</a>
-<form name='urlForm'  novalidate>
-  <input type='url' name='longUrl' ng-class='{valid:urlForm.$valid}' placeholder='Please enter a valid URL' required ng-model='link.url'>
-  <button ng-click='addLink()' ng-disabled='urlForm.$invalid || urlForm.$pristine'>Shorten URL</button>
-  <!-- <p ng-show='urlForm.$invalid'>Enter a valid URL</p>  -->
+  <a href='/#/links'>All Links</a>
+  <a href='/#/shorten'>Shorten</a>
+  <form name='urlForm'  novalidate>
+    <input type='url' name='longUrl' ng-class='{valid:urlForm.$valid}' placeholder='Please enter a valid URL' required ng-model='link.url'>
+    <button ng-click='addLink()' ng-disabled='urlForm.$invalid || urlForm.$pristine'>Shorten URL</button>
   </form>
 </div>
-
-
-<!-- required ng-pattern='regexp' -->
